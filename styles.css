@@ -1,0 +1,473 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --header-color: rgb(52, 100, 78);
+  --card-background: #ffffff;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --hover-color: #2980b9;
+  --error-color: #e74c3c;
+  --disabled-color: #807676;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  background-image: url('futsal.jpg');
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: var(--header-color);
+  padding: 1.5rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+header:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+h1 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.login-btn button,
+#logout {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.login-btn button:hover,
+#logout:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+}
+
+main {
+  padding: 3rem 0;
+}
+
+.intro,
+.objectives,
+.book-futsal,
+.booking-history, 
+.tournaments{
+  background: var(--card-background);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 2.5rem;
+  transition: var(--transition);
+  margin-top: 20px;
+}
+
+.intro:hover,
+.objectives:hover,
+.book-futsal:hover,
+.booking-history:hover
+.tournament:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  color: var(--header-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 1rem;
+  position: relative;
+  font-size: 1.1rem;
+}
+
+li::before {
+  content: "✓";
+  color: var(--secondary-color);
+  position: absolute;
+  left: -2rem;
+  font-weight: bold;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--card-background);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--error-color);
+  transition: var(--transition);
+}
+
+.close-btn:hover {
+  color: #c0392b;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+input,
+select {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  transition: var(--transition);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+form button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+form button:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.courts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.court-card {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.court-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.court-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.court-info {
+  padding: 1rem;
+}
+
+.court-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.court-price {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.court-contact {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  margin-top: 0.5rem;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.time-slot {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.time-slot:hover {
+  background-color: #f0f0f0;
+}
+
+.time-slot.booked {
+  background-color: var(--error-color);
+  color: white;
+  cursor: not-allowed;
+}
+
+.time-slot.selected {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+#bookFutsal:enabled{
+  background: var(--header-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin-top: 10px;
+}
+#bookFutsal:disabled {
+  background-color: var(--disabled-color);
+  cursor: not-allowed;
+
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin-top: 10px;
+  
+}
+
+.booking-item {
+  background-color: #f9f9f9;
+  border-radius: var(--border-radius);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  transition: var(--transition);
+}
+
+.booking-item:hover {
+  background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  header .container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .courts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .time-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  form button {
+    padding: 0.9rem;
+  }
+
+  .user-info {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .courts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .time-slot {
+    padding: 0.9rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Disabled Time Slots */
+.time-slot.disabled {
+  background-color: #e0e0e0;
+  color: #a0a0a0;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Fullscreen overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Centered popup */
+.popup-content {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Image styling */
+.popup-content img {
+  max-width: 95%; /* Smaller image */
+  max-height: 500px; /* Limit image size */
+  border-radius: 5px;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.close-btn:hover {
+  background: darkred;
+}
+
+#Tournaments {
+  background: var(--header-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin-top: 10px;
+}
+
+

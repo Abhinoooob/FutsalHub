@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FutsalHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Dashboard</h1>
+            <div class="user-info">
+                <div class="user-icon"></div>
+                <span class="username"></span>
+                <button id="logout">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="book-futsal">
+            <h2>Book Futsal</h2>
+            <div>
+                <label for="bookingDate">Date:</label>
+                <input type="date" id="bookingDate">
+                
+                <label for="location">Select Location:</label>
+                <select id="location" disabled>
+                    <option value="">Select location</option>
+                    <option value="Kathmandu">Kathmandu</option>
+                    <option value="Bhaktapur">Bhaktapur</option>
+                    <option value="Lalitpur">Lalitpur</option>
+                </select>
+               
+                <label for="sortSelect">Sort by:</label>
+                <select id="sortSelect" disabled>
+                    <option value="">Sort by</option>
+                    <option value="price_asc">Price: Low to High</option>
+                    <option value="price_desc">Price: High to Low</option>
+                </select>
+
+                <select id="courtSelect" style="display: none;">
+                    <option value="">Select court</option>
+                </select>
+                <div id="timeSlots" class="time-grid"></div>
+                <button id="bookFutsal" disabled>Book Futsal</button>
+            </div>
+       
+<section class="booking-history">
+    <h2>Booking History</h2>
+    <div class="sort-controls">
+        <label for="bookingSort">Sort by:</label>
+        <select id="bookingSort">
+            <option value="booked_time">Booked Time (Default)</option>
+            <option value="match_time">Match Time</option>
+        </select>
+    </div>
+    <div id="bookings"></div>
+</section>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
+

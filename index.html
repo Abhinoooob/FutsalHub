@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutsalHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>FutsalHub</h1>
+            <div class="login-btn">
+                <button id="openLogin">Login</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h2>Welcome to FutsalHub</h2>
+            <p>Your one-stop platform to seamlessly book futsal courts in your area.</p>
+        </section>
+
+        <section class="objectives">
+            <h2>Our Objectives</h2>
+            <ul>
+                <li>Connect futsal courts in your town.</li>
+                <li>Enable seamless bookings for players.</li>
+                <li>Provide a user-friendly interface to view availability and book courts in real time.</li>
+                <li>Ensure all futsals are easily discoverable and accessible.</li>
+            </ul>
+        </section>
+    </main>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeLogin">&times;</span>
+
+            <div id="loginFormContainer">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <input type="text" id="loginUsername" placeholder="Username" required>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="javascript:void(0);" id="showRegister">Create an account</a></p>
+            </div>
+
+            <div id="registerForm" style="display: none;">
+                <h2>Register</h2>
+                <form id="registerFormContent">
+                    <input type="text" id="registerUsername" placeholder="Username" required>
+                    <input type="email" id="registerEmail" placeholder="Email" required>
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                    <button type="submit">Register</button>
+                </form>
+                <p>Already have an account? <a href="javascript:void(0);" id="showLogin">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
